@@ -34,7 +34,20 @@
 
 
         <div class="mobile-menu">
+            <div class="mobile-menu__burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
+            <div class="mobile-menu__logo">
+                <img src="img/logo.png" alt="Error">
+            </div>
+
+            <div class="mobile-menu__contact">
+                <a href=""><img src="img/insta.png" alt=""></a>
+                <a href=""><img src="img/facebook.png" alt=""></a>
+            </div>
         </div>
     </div>
     
@@ -159,9 +172,10 @@
         </div>
     </div>
 
+<!-- block4  -->
 
     <div class="itsjustmagic-container">
-        <img src="img/itsjustmagick.png" alt="">
+        <img src="img/itsjustmagick.png" alt="" class="itsjustmagick-img">
 
         <div class="itsjustmagic__text-container">
             <div class="itsjustmagic__text">
@@ -173,42 +187,115 @@
             </h3>
 
             <p>
-                Even your grandmother can handle this product. Or
-                <br> maybe she can handle it even better than you. <span class="bold">
+                Even your grandmother can handle this product.<br> Or
+                 maybe she can handle it even better than you. <span class="bold purple">
                     <br>Thanks to this magical link.</span>
             </p>
 
             <button type="button" class="btn modal-btn" data-toggle="modal" data-target="#exampleModal">To be cooler!</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="ijm-mobile">
+        <img src="img/itsjustmagick.png" alt="" >
+    </div>
+
+<!-- block5  -->
+
+    <div class="contacts-container">
+        <img src="img/Chat.png" alt="" class="chat-img">
         
+        <h3>Don't you get it? Come on!</h3>
+        
+        <div class="contacts-line"></div>
+
+        <div class="contacts-form">
+            <div class="contacts__info">
+                <p>If you really don't understand something, write to mail@tsunami.group.</p>
+                <p>
+                    And please remember to read <span class="bold purple">this important  information</span>  with your grandmother.
+                      It's really important.
+                </p>
+                
+                <a class="contacts-link" href="#">
+                    <img src="img/whatsapp-icon.png" alt="">Hey, text me on WhatsApp!
+                </a>
+            </div>
+
+            <div class="contacts__form-container">
+                <form action="" method="post" name="form" >
+                    <span class="bold purple">Name</span>
+                    <input class="inp" type="text" placeholder="Your Name">
+                    <span class="bold purple">Email</span>
+                    <input class="inp" type="email" placeholder="name@mail.com">
+                    <span class="bold purple">Phone</span>
+                    <input class="inp" type="tel" placeholder="+7 (960) 555-44-33">
+                </form>
+                <button>Send</button>
             </div>
         </div>
     </div>
 
-
-    <div class="contacts-container">
-
-    </div>
-
+<!-- block5  -->
 
     <div class="footer-container">
-        
+        <div class="footer-header">
+            <div class="footer-header__logo">
+                <img src="img/footer-logo.png" alt="Error">
+            </div>
+            <div class="footer-header-top-container">
+                <div class="footer-header__list">
+                    <ul>
+                        <li><a href="">product</a></li>
+                        <li><a href="">description</a></li>
+                        <li><a href="">contact us</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-header__contact">
+                    <a href=""><img src="img/white-inst.png" alt=""></a>
+                    <a href=""><img src="img/white-feacebook.png" alt=""></a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="footer-form">
+            <span>Stay up to date</span>
+            <form action="">
+                <input type="text" placeholder="my@email.com">
+                <button>Sign up</button>
+            </form>
+        </div>
+
+        <div class="footer-line"></div>
+
+        <p>Test assignment on the frontend from Tsunami - 2021</p>
     </div>
+
 <!-- modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Use the product</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              ...
+                <form action="" method="post" name="form" >
+                    <span class="bold purple">Name</span>
+                    <input class="inp" type="text" placeholder="Your Name">
+                    <span class="bold purple">Email</span>
+                    <input class="inp" type="email" placeholder="name@mail.com">
+                    <span class="bold purple">Phone</span>
+                    <input class="inp" type="tel" placeholder="+7 (960) 555-44-33">
+                </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn modal-btn">Send</button>
             </div>
           </div>
         </div>
