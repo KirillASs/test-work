@@ -30,10 +30,11 @@ $(document).ready(function () {
     });
 });
 
-//Закрытие модального окна
+
 $(document).ready(function ($) {
     $('.button').click(function () {
         $('body').addClass('lock');
+        $('.modal').addClass('scroll');
         if ($(window).width() > 1177) {
             $('body').addClass('lock-fix');
         }
@@ -44,6 +45,7 @@ $(document).ready(function ($) {
     $('.popup-close').click(function () {
         $('body').removeClass('lock');
         $('body').removeClass('lock-fix');
+        $('.modal').removeClass('scroll');
         $(this).parents('.modal').fadeOut();
         return false;
     });
@@ -51,6 +53,7 @@ $(document).ready(function ($) {
     $('#policy-accept').click(function () {
         $('body').removeClass('lock');
         $('body').removeClass('lock-fix');
+        $('.modal').removeClass('scroll');
         $(this).parents('.modal').fadeOut();
         return false;
     });
@@ -59,6 +62,7 @@ $(document).ready(function ($) {
         $('body').removeClass('lock');
         $('body').removeClass('lock-fix');
         $(this).parents('.modal').fadeOut();
+        $('.modal').removeClass('scroll');
         return false;
     });
 
@@ -68,14 +72,16 @@ $(document).ready(function ($) {
             $('.modal').fadeOut();
             $('body').removeClass('lock-fix');
             $('body').removeClass('lock');
+            $('.modal').removeClass('scroll');
         }
     });
-
+    //Закрытие модального окна
     $('.modal').click(function (e) {
         if ($(e.target).closest('.modal-content').length == 0) {
             $(this).fadeOut();
             $('body').removeClass('lock');
             $('body').removeClass('lock-fix');
+            $('.modal').removeClass('scroll');
         }
     });
 });
