@@ -1,319 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.min.css">
-    <title>Тестовое задание</title>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <title>Test</title>
 </head>
+
 <body>
-    <!-- block1 -->
-    <div class="header-container">
-        <div class="header">
-            <div class="header__logo">
-                <img src="img/logo.png" alt="Error">
+    <div class="page-wrapper">
+        <!-------------------modal strat------------------>
+        <div class="modal">
+            <div class="modal-warpper">
+                <div class="modal-content">
+                    <div class="small-screen-close">
+                        <div class="small-close">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="modal-title">
+                        <h2>Отклик на вакансию</h2>
+                    </div>
+
+                    <form action="" method="post" class="modal-form" action="senf.php">
+                        <div class="form-input__wrapper">
+                            <input type="text" placeholder=" " />
+                            <label>Желаемая вакансия *</label>
+                        </div>
+                        <div class="form-input__wrapper">
+                            <input type="text" placeholder=" " />
+                            <label>Фамилия, имя и отчество *</label>
+                        </div>
+                        <div id="double" class="form-input__wrapper">
+                            <div class="double-input">
+                                <input id="phone-mask" type="text" placeholder=" " type="tel" name="mobile" />
+                                <label>Мобильный телефон</label>
+                            </div>
+                            <div class="double-input">
+                                <input type="text" placeholder=" " type="emale" name="emale" pattern=".+@globex\.com"
+                                    size="30" />
+                                <label>E-mail</label>
+                            </div>
+                        </div>
+                        <div class="form-input__wrapper">
+                            <input type="text" placeholder=" " />
+                            <label>Образование</label>
+                        </div>
+                        <div class="form-input__wrapper">
+                            <input type="text" placeholder=" " />
+                            <label>Адрес места жительства *</label>
+                        </div>
+                        <div id="double" class="form-input__wrapper">
+                            <div class="double-input">
+                                <input id="date-mask" type="text" placeholder="a" name="data" />
+                                <label>Дата рождения</label>
+                            </div>
+                            <div class="load-resume">
+                                <input id="file-input" type="file" name="file" multiple>
+                                <label class="file-lable" for="file-input">Загрузить резюме</label>
+                            </div>
+                        </div>
+
+                        <div class="form-input__wrapper">
+                            <textarea name="" required id="comment" placeholder="comment"></textarea>
+                            <label>Комментарий</label>
+                        </div>
+
+                        <div class="form-button">
+                            <div class="form-policy">
+                                <div class="checkbox">
+                                    <input id="checkbox-for-accepted" type="checkbox" name="accept"
+                                        onchange="document.getElementById('mc-embedded-subscribe').disabled = !this.checked">
+                                    <label for="checkbox-for-accepted" class="checkbox-for-accepted__lable"></label>
+                                </div>
+                                <span class="checkbox__text">
+                                    <p>Я принимаю условия
+                                        <a href="#" id="policy-accept"> передачи
+                                            информации</a>
+                                    </p>
+                                </span>
+                            </div>
+
+                            <input type="submit" value="Отправить" name="subscribe" id="mc-embedded-subscribe" disabled
+                                class="button check-form" />
+                        </div>
+                    </form>
+                </div>
+                <div class="popup-close">
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            
-            <div class="header__list">
+        </div>
+
+
+
+
+        <!--------------------modal end------------------->
+
+        <!-------------------mibile-nav strat------------------>
+        <div class="mobile-menu-list">
+            <div class="mobile-menu-list__nav">
                 <ul>
-                    <li><a href="#product">product</a></li>
-                    <li><a href="#description">description</a></li>
-                    <li><a href="#contact-us">contact us</a></li>
+                    <li><a class="click-event menu-click" href="#">О нас</a></li>
+                    <li><a class="click-event menu-click" href="#">Наши ценности</a></li>
+                    <li><a class="click-event menu-click" href="#">Вакансии</a></li>
+                    <li><a class="click-event menu-click" href="#">Начало карьеры</a></li>
+                    <li><a class="click-event menu-click" href="#">Контакты</a></li>
                 </ul>
             </div>
-
-            <div class="header__contact">
-                <a href=""><img src="img/insta.png" alt=""></a>
-                <a href=""><img src="img/facebook.png" alt=""></a>
-            </div>
-        </div>
-
-
-        <div class="mobile-menu">
-            <div class="mobile-menu__burger" id="has">
-                <span></span>
-                <span id="short-bar"></span>
-                <span></span>
-            </div>
-
-            <div class="mobile-menu__logo">
-                <img src="img/logo.png" alt="Error">
-            </div>
-
-            <div class="mobile-menu__contact">
-                <a href=""><img src="img/insta.png" alt=""></a>
-                <a href=""><img src="img/facebook.png" alt=""></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="mobile-menu-list">
-        <div class="mobile-menu-list__menu">
-            <ul>
-                <li><a class="click-event" href="#product">Product</a></li>
-                <li><a class="click-event" href="#description">Description</a></li>
-                <li><a class="click-event" href="#contact-us">Contact us</a></li>
-            </ul>
-        </div>
-    </div>
-
-<!-- block2 -->
-
-    <div class="top-container" id="description">
-        <div class="purpule-block">
-            <div class="purpule-block__text_container">
-                <div class="purpule-block__text">
-                    <h2>
-                        New top product
-                        <br> for startups.
-                    </h2>
-
-                    <h4>
-                        Another new top product for startups has been
-                        <br> released. Take advantage of it right now completely
-                            <br> free of charge.
-                    </h4>
-
-                    <div class="purpule-block__button">
-                        <button type="button" class="btn modal-btn" data-toggle="modal" data-target="#exampleModal">
-                            Use it!
-                        </button>
-
-                        <a href="#" class="purpule-block__text_hyper-btn">Learn more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="purpule-block__bussnesman-img">
-                <img src="img/busnesma.png" alt="">
-            </div>
-        </div>
-
-        <div class="purpule-block__bussnesman-img-mobile">
-            <img src="img/busnesma2.png" alt="">
-        </div>
-    </div>
-
-<!-- block3  -->
-
-    <div class="stratups-container" id="product">
-        <h3>
-            Startups haven't seen this yet!
-        </h3>
-        <div class="line"></div>
-        <p>
-            Very cool product with unique functionality and excellent interface design. A must-
-            <br>have for the year 2021.
-        </p>
-       
-        <div class="buy-please">
-            <div class="slider">
-                <div class="slider__item">
-                    <img src="img/rainbow-point.png" alt="">
-                    <div class="slider__item__block">
-                        <div class="slider__item__block__text">
-                            <h4>
-                                Right
-                            </h4>
-
-                            <p>
-                                The benefits of the product
-                                <br> will not be described here.
-                                    <br> Because it's just a top.
-                            </p>
-                        </div>
-
-                        <div class="slider__item__block__btn">
-                            <button type="button" class="btn slider__btn" data-toggle="modal" data-target="#exampleModal">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slider__item">
-                    <img src="img/coin.png" alt="">
-                    <div class="slider__item__block">
-                        <div class="slider__item__block__text">
-                            <h4>
-                                Compact
-                            </h4>
-
-                            <p>
-                                The benefits of the product
-                                <br> will not be described here.
-                                    <br> Because it's just a top.
-                            </p>
-                        </div>
-
-                        <div class="slider__item__block__btn">
-                            <button type="button" class="btn slider__btn" data-toggle="modal" data-target="#exampleModal">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slider__item">
-                    <img src="img/credit-card.png" alt="">
-                    <div class="slider__item__block">
-                        <div class="slider__item__block__text">
-                            <h4>
-                                Via card
-                            </h4>
-
-                            <p>
-                                The benefits of the product
-                                <br> will not be described here.
-                                    <br> Because it's just a top.
-                            </p>
-                        </div>
-
-                        <div class="slider__item__block__btn">
-                            <button type="button" class="btn slider__btn" data-toggle="modal" data-target="#exampleModal">
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<!-- block4  -->
-
-    <div class="itsjustmagic-container">
-        <img src="img/itsjustmagick.png" alt="" class="itsjustmagick-img">
-
-        <div class="itsjustmagic__text-container">
-            <div class="itsjustmagic__text">
-            <span>#Itsjustmagic</span>
-
-            <h3>
-                Simple, quick
-                <br> and affordable.
-            </h3>
-
-            <p>
-                Even your grandmother can handle this product.<br> Or
-                 maybe she can handle it even better than you. <span class="bold purple">
-                    <br>Thanks to this magical link.</span>
-            </p>
-
-            <button type="button" class="btn modal-btn" data-toggle="modal" data-target="#exampleModal">To be cooler!</button>
-
-            </div>
-        </div>
-    </div>
-    <div class="ijm-mobile">
-        <img src="img/itsjustmagick.png" alt="" >
-    </div>
-
-<!-- block5  -->
-
-    <div class="contacts-container" id="contact-us">
-        <img src="img/Chat.png" alt="" class="chat-img">
-        
-        <h3>Don't you get it? Come on!</h3>
-        
-        <div class="contacts-line"></div>
-
-        <div class="contacts-form">
-            <div class="contacts__info">
-                <p>If you really don't understand something, write to mail@tsunami.group.</p>
-                <p>
-                    And please remember to read <span class="bold purple">this important  information</span>  with your grandmother.
-                      It's really important.
-                </p>
-                
-                <a class="contacts-link" href="#">
-                    <img src="img/whatsapp-icon.png" alt="">Hey, text me on WhatsApp!
+            <div class="menu-contact">
+                <a class="menu-contakt__link menu-click" href="#">
+                    <svg class="vk">
+                        <use xlink:href="img/contact-sprite.svg#vk-icon"></use>
+                    </svg>
+                </a>
+                <a class="menu-contakt__link menu-click" href="#">
+                    <svg class="odnoklas">
+                        <use xlink:href="img/contact-sprite.svg#odnoclas-icon"></use>
+                    </svg>
+                </a>
+                <a class="menu-contakt__link menu-click" href="#">
+                    <svg class="facebook">
+                        <use xlink:href="img/contact-sprite.svg#facebook-icon"></use>
+                    </svg>
+                </a>
+                <a class="menu-contakt__link menu-click" href="#">
+                    <svg class="insta">
+                        <use xlink:href="img/contact-sprite.svg#insta-icon"></use>
+                    </svg>
                 </a>
             </div>
-
-            <div class="contacts__form-container">
-                <form action="" method="post" name="form" >
-                    <span class="bold purple">Name</span>
-                    <input class="inp" type="text" placeholder="Your Name">
-                    <span class="bold purple">Email</span>
-                    <input class="inp" type="email" placeholder="name@mail.com">
-                    <span class="bold purple">Phone</span>
-                    <input class="inp" type="tel" placeholder="+7 (960) 555-44-33">
-                </form>
-                <button>Send</button>
-            </div>
         </div>
-    </div>
+        <!-------------------mibile-nav end-------------------->
 
-<!-- block5  -->
+        <!-----------------header strat--------------------------->
+        <header class="header">
+            <div class="container">
+                <div class="header__row">
+                    <div class="header__logo">
+                        <img src="img/header_logo.svg" alt="">
+                    </div>
 
-    <div class="footer-container">
-        <div class="footer-header">
-            <div class="footer-header__logo">
-                <img src="img/footer-logo.png" alt="Error">
-            </div>
-            <div class="footer-header-top-container">
-                <div class="footer-header__list">
-                    <ul>
-                        <li><a href="#product">product</a></li>
-                        <li><a href="#description">description</a></li>
-                        <li><a href="#contact-us">contact us</a></li>
-                    </ul>
+                    <!--Desktop-menu strat-->
+                    <div class="header__nav">
+                        <ul class="header-menu">
+                            <li>
+                                <div class="underline">
+                                    <a href="">О нас</a>
+                                </div>
+
+                            </li>
+
+                            <li>
+                                <div class="underline">
+                                    <a href="">Наши ценности</a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="underline">
+                                    <a href="">Вакансии</a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="underline">
+                                    <a href="">Начало карьеры</a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="underline">
+                                    <a href="">Контакты</a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#" class="dropdown"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Desktop-menu end-->
+
+                    <!--Mobile-menu strat-->
+                    <div class="mobile-hamburger">
+                        <i class="change cross-color"></i>
+                        <i class="change cross-color"></i>
+                        <i class="change cross-color"></i>
+                    </div>
+                    <!--Mobile-menu end-->
                 </div>
-    
-                <div class="footer-header__contact">
-                    <a href=""><img src="img/white-inst.png" alt=""></a>
-                    <a href=""><img src="img/white-feacebook.png" alt=""></a>
+            </div>
+        </header>
+        <!-----------------header end--------------------------->
+
+        <div class="main">
+
+            <!----------------first-section strat-------------------->
+
+            <div class="first-section">
+                <div class="first-section__content">
+                    <div class="first-section__title">Энергия твоего роста! – заряжаем твою карьеру</div>
+                    <button class="button">Cтать частью команды</button>
+                </div>
+
+                <div class="first-section__img">
                 </div>
             </div>
-            
-        </div>
+            <!----------------first-section end-------------------->
 
-        <div class="footer-form">
-            <span>Stay up to date</span>
-            <form action="">
-                <input type="text" placeholder="my@email.com">
-                <button>Sign up</button>
-            </form>
-        </div>
+            <!----------------advantage-section start-------------------->
+            <div class="advantages">
+                <div class="advantages__content-container">
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#development-icon"></use>
+                            </svg>
+                            <h2>Развитие</h2>
+                        </div>
 
-        <div class="footer-line"></div>
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
 
-        <p>Test assignment on the frontend from Tsunami - 2021</p>
-    </div>
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#teach-icon"></use>
+                            </svg>
+                            <h2>Обучение</h2>
+                        </div>
 
-<!-- modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Use the product</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
+
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#responsibility-icon"></use>
+                            </svg>
+                            <h2>Ответственность</h2>
+                        </div>
+
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
+
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#vector-icon"></use>
+                            </svg>
+                            <h2>Динамика</h2>
+                        </div>
+
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
+
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#comfort-icon"></use>
+                            </svg>
+                            <h2>Комфорт</h2>
+                        </div>
+
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
+
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#reliability-icon"></use>
+                            </svg>
+                            <h2>Надежность</h2>
+                        </div>
+
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                <form action="" method="post" name="form" >
-                    <span class="bold purple">Name</span>
-                    <input class="inp" type="text" placeholder="Your Name">
-                    <span class="bold purple">Email</span>
-                    <input class="inp" type="email" placeholder="name@mail.com">
-                    <span class="bold purple">Phone</span>
-                    <input class="inp" type="tel" placeholder="+7 (960) 555-44-33">
-                </form>
+            <!----------------advantage-section end-------------------->
+            <!--------Advantege-slider strat---------->
+            <div class="slider-container">
+                <div class="first-slider">
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#development-icon"></use>
+                            </svg>
+                            <h2>Развитие</h2>
+                        </div>
+
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
+
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#teach-icon"></use>
+                            </svg>
+                            <h2>Обучение</h2>
+                        </div>
+
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
+
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#responsibility-icon"></use>
+                            </svg>
+                            <h2>Ответственность</h2>
+                        </div>
+
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
+
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#vector-icon"></use>
+                            </svg>
+                            <h2>Динамика</h2>
+                        </div>
+
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
+
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#comfort-icon"></use>
+                            </svg>
+                            <h2>Комфорт</h2>
+                        </div>
+
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
+
+                    <div class="advantages__items">
+                        <div class="advantages__items__main">
+                            <svg class="key invert">
+                                <use xlink:href="img/advantage-sprite.svg#reliability-icon"></use>
+                            </svg>
+                            <h2>Надежность</h2>
+                        </div>
+
+                        <div class="advantages__items_hidden-text">
+                            Общего центра обслуживания. Современные технологии, проекты, рабочие группы
+                        </div>
+                    </div>
+                    <!--------Advantege-slider end---------->
+                </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn modal-btn">Send</button>
-            </div>
-          </div>
+
         </div>
-    </div>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js""></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
-    <script src="js/script.js"></script>
+        <script src="https://unpkg.com/imask"></script>
+        <script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/script.js"></script>
 </body>
+
 </html>
